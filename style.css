@@ -1,85 +1,139 @@
+/* ===========================
+   Happy Birthday - Part 1
+=========================== */
+
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
-background:linear-gradient(135deg,#0b001a,#19002d,#2b003f);
-color:#fff;
-display:flex;
-justify-content:center;
-align-items:center;
-min-height:100vh;
-overflow:hidden;
+    background:linear-gradient(180deg,#090015,#120024,#1b0035);
+    color:#fff;
+    overflow-x:hidden;
+    min-height:100vh;
 }
+
+/* Background Stars */
+
+.stars{
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    pointer-events:none;
+    z-index:-1;
+    background-image:
+    radial-gradient(white 1px, transparent 1px),
+    radial-gradient(#ffd6f8 1px, transparent 1px);
+    background-size:80px 80px,120px 120px;
+    animation:starsMove 80s linear infinite;
+}
+
+@keyframes starsMove{
+
+from{
+transform:translateY(0);
+}
+
+to{
+transform:translateY(-1000px);
+}
+
+}
+
+/* Main Container */
 
 .container{
+
 width:90%;
-max-width:500px;
-text-align:center;
-padding:30px;
-background:rgba(255,255,255,.08);
-backdrop-filter:blur(15px);
+max-width:650px;
+
+margin:80px auto;
+
+padding:35px;
+
 border-radius:25px;
-box-shadow:0 0 40px rgba(255,0,120,.3);
-animation:fadeIn 1.5s ease;
+
+text-align:center;
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(14px);
+
+box-shadow:0 0 40px rgba(255,0,150,.30);
+
 }
 
-h1{
-font-size:40px;
-color:#ff69b4;
-margin-bottom:10px;
-text-shadow:0 0 15px #ff1493;
-}
+.container h1{
 
-h2{
-font-size:28px;
+font-size:42px;
+
+color:#ff7bd5;
+
 margin-bottom:15px;
+
+text-shadow:0 0 20px #ff4fc4;
+
 }
 
-.wish{
+.container h2{
+
+font-size:30px;
+
+margin-bottom:15px;
+
+}
+
+.container p{
+
 font-size:18px;
+
 line-height:1.8;
-margin-bottom:25px;
+
+margin-bottom:30px;
+
 }
 
 button{
+
 padding:15px 35px;
+
 font-size:18px;
+
 border:none;
+
 border-radius:40px;
-background:#ff1493;
-color:#fff;
+
+background:#ff4fa3;
+
+color:white;
+
 cursor:pointer;
-transition:.3s;
+
+transition:.35s;
+
 }
 
 button:hover{
+
 transform:scale(1.08);
-box-shadow:0 0 20px #ff1493;
+
+box-shadow:0 0 25px #ff4fa3;
+
 }
 
-.heart{
-font-size:60px;
-animation:heart 1.2s infinite;
-margin:20px 0;
-}
+/* Hide Sections */
 
-@keyframes heart{
-0%{transform:scale(1);}
-50%{transform:scale(1.2);}
-100%{transform:scale(1);}
-}
+.hidden{
 
-@keyframes fadeIn{
-from{
-opacity:0;
-transform:translateY(40px);
-}
-to{
-opacity:1;
-transform:translateY(0);
-}
+display:none;
+
 }
